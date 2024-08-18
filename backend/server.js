@@ -5,9 +5,13 @@ import User from "./model/userModel.js";  //necessary
 import Product from "./model/productModel.js"
 import Category from "./model/categoryModel.js";
 import Cart from "./model/cartModel.js";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
+app.use(cors({
+    origin:'*'
+}))
 app.use(express.json())
 app.use(express.urlencoded()); 
 app.use(express.static("./storage/"))
